@@ -46,8 +46,8 @@ class Conference
 
         // Gestion des dates passées de l'event
         if ($date < new \DateTimeImmutable('now')) {
-            //TODO throw InvalidEventDateTime::mustNotBeInTheFuture();
-            throw new \Exception('InvalidEventDateTime::mustNotBeInTheFuture()');
+            //TODO throw InvalidEventDateTime::mustNotBeInThePast();
+            throw new \Exception('InvalidEventDateTime::mustNotBeInThePast()');
         }
 
         $this->title                     = $title;
