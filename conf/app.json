@@ -1,6 +1,6 @@
 {
   "logger": {
-    "type": "mysql",
+    "type": "blackhole",
     "path": "../var/logs/debug.log",
     "format": "[%date%] - %url% - %message%"
   },
