@@ -63,4 +63,14 @@ class Student implements Person
     {
         return $this->sponsor;
     }
+
+    public function checkEmail(): bool
+    {
+        return true;// TODO: Implement checkEmail() method.
+    }
+
+    public function checkPhone(): bool
+    {
+        return true;// TODO: Implement checkPhone() method.
+    }
 }

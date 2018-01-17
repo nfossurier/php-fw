@@ -10,5 +10,8 @@ namespace Metinet\Domain;
 
 interface Person
 {
+    public function checkEmail(): bool;
+
+    public function checkPhone(): bool;
 
 }

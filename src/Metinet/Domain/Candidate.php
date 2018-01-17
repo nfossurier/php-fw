@@ -39,4 +39,14 @@ class Candidate implements Person
     {
         return $this->dateOfBirth;
     }
+
+    public function checkEmail(): bool
+    {
+        // TODO: Implement checkEmail() method.
+    }
+
+    public function checkPhone(): bool
+    {
+        // TODO: Implement checkPhone() method.
+    }
 }

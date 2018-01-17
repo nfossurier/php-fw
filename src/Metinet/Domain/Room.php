@@ -10,7 +10,7 @@ namespace Metinet\Domain;
 
 class Room
 {
-    private $id;
+    private $name;
     private $capacity;
     private $building;
     private $floor;
@@ -20,16 +20,17 @@ class Room
 
     /**
      * Room constructor.
-     * @param int    $id
+     * @param string $name
      * @param int    $capacity
      * @param string $building
      * @param int    $floor
      * @param string $address
      * @param string $city
      * @param int    $zipCode
+     * @throws \Exception
      */
     public function __construct(
-        int $id,
+        string $name,
         int $capacity,
         string $building,
         int $floor,
@@ -37,7 +38,12 @@ class Room
         string $city,
         int $zipCode
     ) {
-        $this->id       = $id;
+
+        if (!$capacity > 0) {
+            throw new \Exception('Capacity cannot be null');
+        }
+
+        $this->name     = $name;
         $this->capacity = $capacity;
         $this->building = $building;
         $this->floor    = $floor;

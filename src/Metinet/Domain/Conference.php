@@ -15,10 +15,11 @@ class Conference
     private $objectives;
     private $date;
     private $guests;
-    private $duration;
+    private $durationInMinutes;
     private $organizer;
     private $room;
     private $isAllowedToExternalPeople;
+    private $priceForExternal;
 
     /**
      * Conference constructor.
@@ -26,7 +27,7 @@ class Conference
      * @param string    $description
      * @param array     $objectives
      * @param \DateTime $date
-     * @param float     $duration
+     * @param int       $durationInMinutes
      * @param Student   $organizer
      * @param Room      $room
      * @param bool      $isAllowedToExternalPeople
@@ -37,7 +38,7 @@ class Conference
         string $description,
         array $objectives,
         \DateTime $date,
-        float $duration,
+        int $durationInMinutes,
         Student $organizer,
         Room $room,
         bool $isAllowedToExternalPeople
@@ -53,10 +54,11 @@ class Conference
         $this->description               = $description;
         $this->objectives                = $objectives;
         $this->date                      = $date;
-        $this->duration                  = $duration;
+        $this->durationInMinutes         = $durationInMinutes;
         $this->organizer                 = $organizer;
         $this->room                      = $room;
         $this->isAllowedToExternalPeople = $isAllowedToExternalPeople;
+        $this->priceForExternal          = rand(1, 5); //TODO
     }
 
     public function addGuest(Person $person): array
