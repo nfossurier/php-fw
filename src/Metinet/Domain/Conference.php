@@ -54,7 +54,7 @@ class Conference
         $this->description               = $description;
         $this->objectives                = $objectives;
         $this->date                      = $date;
-        $this->durationInMinutes         = $durationInMinutes;
+        $this->durationInMinutes         = abs($durationInMinutes);
         $this->organizer                 = $organizer;
         $this->room                      = $room;
         $this->isAllowedToExternalPeople = $isAllowedToExternalPeople;
