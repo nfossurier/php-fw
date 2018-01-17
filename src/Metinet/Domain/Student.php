@@ -5,7 +5,7 @@
 
 namespace Metinet\Domain;
 
-class Student
+class Student implements Person
 {
     private $firstName;
     private $lastName;

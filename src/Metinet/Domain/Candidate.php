@@ -5,7 +5,7 @@
 
 namespace Metinet\Domain;
 
-class Candidate
+class Candidate implements Person
 {
     private $firstName;
     private $lastName;

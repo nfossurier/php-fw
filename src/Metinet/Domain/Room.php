@@ -20,13 +20,13 @@ class Room
 
     /**
      * Room constructor.
-     * @param $id
-     * @param $capacity
-     * @param $building
-     * @param $floor
-     * @param $address
-     * @param $city
-     * @param $zipCode
+     * @param int    $id
+     * @param int    $capacity
+     * @param string $building
+     * @param int    $floor
+     * @param string $address
+     * @param string $city
+     * @param int    $zipCode
      */
     public function __construct(
         int $id,
@@ -46,28 +46,12 @@ class Room
         $this->zipCode  = $zipCode;
     }
 
-    public static function retrieveRoomList()
-    {
-        //Équivalent de BDD
-        $rooms = [
-            ['id' => 'Demie Lune'],
-            ['id' => 'Metinet'],
-            ['id' => 'Amphi']
-        ];
-
-        return $rooms;
-    }
-
     /**
      * @param int $nbGuest
-     * @return void
-     * @throws \Exception
+     * @return bool
      */
-    public function checkRoomCapacity(int $nbGuest): void
+    public function checkRoomCapacity(int $nbGuest): bool
     {
-        if ($this->capacity < $nbGuest) {
-            //TODO throw InvalidRoomCapacity::roomCapacityIsNotSuffisant();
-            throw new \Exception('InvalidRoomCapacity::roomCapacityisNotSuffisant()');
-        }
+        return $this->capacity > $nbGuest;
     }
 }
