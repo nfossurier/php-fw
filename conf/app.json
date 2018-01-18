@@ -4,6 +4,10 @@
     "path": "../var/logs/debug.log",
     "format": "[%date%] - %url% - %message%"
   },
+  "templating": {
+    "layoutPath": "../src/Metinet/Resources/views/layout.html.php",
+    "viewsDirectory": "../src/Metinet/Resources/views/"
+  },
   "routes": {
     "homepage": {
       "path": "/",
