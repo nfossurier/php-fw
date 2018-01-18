@@ -54,4 +54,10 @@ class SecurityController extends Controller
 
         return new Response('', 303, ['Location' => '/login']);
     }
+
+    public function signUp()
+    {
+        return new Response($this->render('signUpForm.html.php')
+        );
+    }
 }
