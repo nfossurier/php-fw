@@ -10,7 +10,7 @@ namespace Metinet\Core\Authentication;
 
 use Metinet\Core\Account\Account;
 
-class ArrayAuthenticationRepository implements AuthenticationRepository
+class InMemoryAuthenticationRepository implements AuthenticationRepository
 {
     private $accounts = [];
 
