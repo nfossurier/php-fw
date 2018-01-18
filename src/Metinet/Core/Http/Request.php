@@ -83,6 +83,11 @@ class Request
         return $this->method;
     }
 
+    public function isPost(): bool
+    {
+        return 'POST' === strtoupper($this->method);
+    }
+
     public function getQuery(): QueryParameters
     {
         return new QueryParameters($this->query);
