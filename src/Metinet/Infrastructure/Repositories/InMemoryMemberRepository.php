@@ -11,6 +11,7 @@ use Metinet\Domain\Conferences\Email;
 use Metinet\Domain\Members\Member;
 use Metinet\Domain\Members\MemberNotFound;
 use Metinet\Domain\Members\MemberRepository;
+use Metinet\Domain\Members\Profile;
 
 class InMemoryMemberRepository implements MemberRepository
 {
@@ -20,6 +21,7 @@ class InMemoryMemberRepository implements MemberRepository
     {
         $passwordEncoder = new PlainTextPasswordEncoder();
         $this->save(Member::register(
+            new Profile('Boris', 'Guéry', '+33686830312'),
             new Email('guery.b@gmail.com'),
             $passwordEncoder->encode('a', 'pepper')
         ));

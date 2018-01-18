@@ -60,6 +60,11 @@
       "path": "/logout",
       "methods": ["GET"],
       "action": "Metinet:Controllers:SecurityController::logout"
+    },
+    "member_sign_up": {
+      "path": "/members/sign-up",
+      "methods": ["GET", "POST"],
+      "action": "Metinet:Controllers:MembersController::signUp"
     }
   }
 }

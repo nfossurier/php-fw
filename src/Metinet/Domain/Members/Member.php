@@ -11,18 +11,24 @@ use Metinet\Domain\Conferences\Email;
 
 class Member implements Account
 {
+    private $profile;
     private $email;
     private $encodedPassword;
 
-    private function __construct(Email $email, EncodedPassword $encodedPassword)
+    private function __construct(Profile $profile, Email $email, EncodedPassword $encodedPassword)
     {
         $this->email = $email;
         $this->encodedPassword = $encodedPassword;
     }
 
-    public static function register(Email $email, EncodedPassword $encodedPassword): self
+    public static function register(Profile $profile, Email $email, EncodedPassword $encodedPassword): self
     {
-        return new self($email, $encodedPassword);
+        return new self($profile, $email, $encodedPassword);
+    }
+
+    public function getProfile(): Profile
+    {
+        return $this->profile;
     }
 
     public function getEmail(): string
