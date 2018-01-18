@@ -63,7 +63,7 @@
     },
     "security_signup": {
       "path": "/signup",
-      "methods": ["GET"],
+      "methods": ["GET", "POST"],
       "action": "Metinet:Controllers:SecurityController::signUp"
     }
   }

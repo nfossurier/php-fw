@@ -10,4 +10,6 @@ use Metinet\Domain\Conferences\Email;
 interface AccountProvider
 {
     public function findByUsername(Email $email): Account;
+
+    public function createAccount(Account $account): void;
 }

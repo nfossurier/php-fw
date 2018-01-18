@@ -7,8 +7,12 @@ namespace Metinet\Controllers;
 
 use Metinet\Core\Http\Request;
 use Metinet\Core\Http\Response;
+use Metinet\Core\Security\Account;
 use Metinet\Core\Security\AuthenticationFailed;
 use Metinet\Domain\Conferences\Email;
+use Metinet\Domain\Members\Member;
+use Metinet\Infrastructure\Security\MemberAccountProvider;
+use Symfony\Component\VarDumper\VarDumper;
 
 class SecurityController extends Controller
 {
@@ -55,8 +59,21 @@ class SecurityController extends Controller
         return new Response('', 303, ['Location' => '/login']);
     }
 
-    public function signUp()
+    public function signUp(Request $request): Response
     {
+        $passwordEncoder = $this->controllerDependencies->getPasswordEncoder();
+        if ($request->isPost()) {
+            $formData = $request->getRequest()->getIterator();
+
+            //TODO CheckData
+
+            $newMember = Member::register(
+                new Email($formData['email']),
+                $passwordEncoder->encode($formData['password'], 'pepper')
+            );
+        }
+
+
         return new Response($this->render('signUpForm.html.php')
         );
     }

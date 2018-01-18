@@ -30,4 +30,9 @@ class MemberAccountProvider implements AccountProvider
             throw new AccountNotFound((string) $email);
         }
     }
+
+    public function createMember(Account $member): void
+    {
+
+    }
 }
