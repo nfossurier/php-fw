@@ -18,7 +18,7 @@ class AuthenticationProvider
 
     public function authenticate(string $login, string $rawPassword): void
     {
-        $arrayAuthProvider = new ArrayAuthenticationRepository();
+        $arrayAuthProvider = new InMemoryAuthenticationRepository();
 
         try {
             $account = $arrayAuthProvider->findByLogin($login);
