@@ -24,6 +24,8 @@ $pdo = new \PDO(
 
 $pdo->exec(sprintf('CREATE DATABASE %s;', $config->getSection('database')['name']));
 
+$pdo->query(sprintf('USE %s', $config->getSection('database')['name']));
+
 $memberTableCreate =<<<MYSQL
 CREATE TABLE `members` (
   `id` varchar(32) NOT NULL DEFAULT '',
