@@ -36,7 +36,7 @@ CREATE TABLE `members` (
   `password_salt` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 MYSQL;
 
 $pdo->exec($memberTableCreate);
