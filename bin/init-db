@@ -15,8 +15,7 @@ $config = new Configuration($loader);
 
 $pdo = new \PDO(
     sprintf(
-        'mysql:dbname=%s;host=%s',
-        $config->getSection('database')['name'],
+        'mysql:host=%s',
         $config->getSection('database')['host']
     ),
     $config->getSection('database')['user'],
