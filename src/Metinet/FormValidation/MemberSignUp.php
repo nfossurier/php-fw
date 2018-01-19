@@ -59,8 +59,8 @@ class MemberSignUp
             $this->errors[] = 'Password mismatch';
         }
 
-        if (\strlen($this->password) < 8) {
-            $this->errors[] = 'Password must be at least 8 chars';
+        if (\strlen($this->password) < 1) {
+            $this->errors[] = 'Password must be at least 1 char';
         }
     }
 
